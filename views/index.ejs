@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%=title%></title>
+
+</head>
+<body>
+    <% include templates/header.ejs%>
+    <h1><%=title%></h1>
+    <p><%=name%> is awesome!</p>
+  
+
+    <ul>
+        <%videodata.categories.forEach(function(item){%>
+            <!-- <li><%=item.categoryName%></li> -->
+            <li><a href='/cat=<%= item.categoryID %>'><%= item.categoryName %></a></li>﻿
+       <% })%>
+
+    </ul>
+    <ul>
+        
+            <%for(var i=0;i<4;i++ ){%>
+            <li>reddy</li>
+            <% } %>
+
+    </ul>
+    
+    <script>
+            
+            window.fbAsyncInit = function() {
+            FB.init({
+            appId      : '2266938670044319',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v3.1'
+            });
+            
+            FB.AppEvents.logPageView();   
+        
+        
+            
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+            
+        };
+        
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        
+        function statusChangeCallback(response){
+            console.log("[][]",response.status)
+        
+        }
+            
+            
+            
+    </script>
+</body>
+</html>
