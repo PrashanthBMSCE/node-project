@@ -11,7 +11,7 @@ var about = require('./routes/about')(router);
 var app = express();
 const https = require('https');
 const fs = require('fs');
-const port = Process.env.PORT || 3000;
+//const port = Process.env.PORT || 3000;
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -39,10 +39,10 @@ app.get('/', function (req, res, next) {
     }
 )
 
-const httpsOptions = {
-    key: fs.readFileSync('./openssl-0.9.8r-x64_86-win64-rev2/cert.key'),
-    cert: fs.readFileSync('./openssl-0.9.8r-x64_86-win64-rev2/cert.pem')
-}
+// const httpsOptions = {
+//     key: fs.readFileSync('./openssl-0.9.8r-x64_86-win64-rev2/cert.key'),
+//     cert: fs.readFileSync('./openssl-0.9.8r-x64_86-win64-rev2/cert.pem')
+// }
 
 
 // app.router
@@ -86,14 +86,14 @@ app.use(function (err, req, res, next) {
 
 
 
-const server = https.createServer(httpsOptions, app)
-    .listen(port, () => {
-        console.log('server running at ' + port)
-    })
+// const server = https.createServer(httpsOptions, app)
+//     .listen(port, () => {
+//         console.log('server running at ' + port)
+//     })
 
 
-// app.listen(3000,function(){
-//     console.log("port is on:3000")
-// });
+app.listen(3000, function () {
+    console.log("port is on:3000")
+});
 module.exports = app;
 

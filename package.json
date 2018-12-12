@@ -1,0 +1,28 @@
+{
+  "name": "node_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "fs": "^0.0.1-security",
+    "morgan": "^1.9.0",
+    "openssl": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrashanthBMSCE/node-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrashanthBMSCE/node-project/issues"
+  },
+  "homepage": "https://github.com/PrashanthBMSCE/node-project#readme"
+}
