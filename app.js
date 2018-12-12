@@ -11,7 +11,7 @@ var about = require('./routes/about')(router);
 var app = express();
 const https = require('https');
 const fs = require('fs');
-//const port = Process.env.PORT || 3000;
+const port = Process.env.PORT || 3000;
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -92,7 +92,7 @@ app.use(function (err, req, res, next) {
 //     })
 
 
-app.listen(3000, function () {
+app.listen(port, function () {
     console.log("port is on:3000")
 });
 module.exports = app;
