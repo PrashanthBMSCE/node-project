@@ -1,5 +1,4 @@
 
-
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
@@ -20,7 +19,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 // app.use(routes);
 app.use(about);
@@ -46,9 +44,7 @@ app.get('/', function (req, res, next) {
 
 
 // app.router
-
 app.locals.points = "1.789"
-
 
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
@@ -75,22 +71,18 @@ if (app.get('env') === 'development') {
 }
 //production error handler
 //no stacktrace leaked to user
-app.use(function (err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    })
-})
-
-
-
+// app.use(function (err, req, res, next) {
+//     res.status(err.status || 500);
+//     res.render('error', {
+//         message: err.message,
+//         error: {}
+//     })
+// })
 
 // const server = https.createServer(httpsOptions, app)
 //     .listen(port, () => {
 //         console.log('server running at ' + port)
 //     })
-
 
 app.listen(port, function () {
     console.log("port is on:3000")
